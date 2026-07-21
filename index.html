@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANTIC G-CAB 2026 — Mise à jour</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--teal:#2CC4B0;--teal-dark:#1A8A7E;--teal-light:#E0F7F5;--text:#1A1A18;--muted:#5F5E5A;--border:#E2E2DE;--bg:#F8FAFB;--white:#fff}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);font-size:15px;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 16px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:16px;color:var(--teal-dark)}
+.nav-logo img{height:36px;width:36px;border-radius:8px;object-fit:cover}
+.nav-cta{background:var(--teal);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none}
+.hero{background:linear-gradient(160deg,#0A3D38 0%,#1A8A7E 45%,#2CC4B0 100%);padding:72px 16px 40px;text-align:center}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#9FE1CB;font-size:11px;font-weight:700;letter-spacing:0.5px;padding:4px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase}
+.hero h1{font-size:clamp(1.6rem,6vw,2.4rem);font-weight:800;color:#fff;line-height:1.2;letter-spacing:-0.5px;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:#9FE1CB}
+.hero-desc{font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:24px;max-width:420px;margin-left:auto;margin-right:auto}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.btn-white{background:#fff;color:var(--teal-dark);padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;border:none;cursor:pointer}
+.btn-outline{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.3);padding:12px 22px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none}
+section{padding:48px 16px}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.sec-title{font-size:clamp(1.3rem,5vw,1.8rem);font-weight:800;color:#1A1A18;letter-spacing:-0.3px;margin-bottom:8px}
+.sec-sub{font-size:14px;color:var(--muted);line-height:1.7}
+.letter-section{background:var(--bg)}
+.letter-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px 22px;max-width:680px;margin:24px auto 0;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.letter-header{text-align:center;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.letter-header h2{font-size:clamp(1.4rem,5vw,2rem);font-weight:800;color:var(--teal-dark);margin-bottom:6px}
+.letter-header .sub{font-size:14px;color:var(--muted)}
+.letter-body{font-size:15px;color:var(--text);line-height:1.85}
+.letter-body p{margin-bottom:16px}
+.letter-body ul{list-style:none;padding:0;margin:16px 0}
+.letter-body ul li{position:relative;padding-left:28px;margin-bottom:10px;color:var(--text)}
+.letter-body ul li::before{content:"✔";position:absolute;left:0;color:var(--teal);font-weight:700}
+.letter-footer{text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+.letter-footer p{font-size:15px;font-weight:600;color:var(--teal-dark);margin-bottom:4px}
+.letter-footer span{font-size:13px;color:var(--muted)}
+.offer-section{background:linear-gradient(135deg,#0A3D38 0%,#1A8A7E 50%,#2CC4B0 100%);text-align:center;padding:56px 16px}
+.offer-section .sec-label{color:#9FE1CB;opacity:0.8}
+.offer-section .sec-title{color:#fff;font-size:clamp(1.5rem,6vw,2.2rem)}
+.offer-section .sec-sub{color:rgba(255,255,255,0.75);max-width:420px;margin:0 auto 28px}
+.offer-card{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:28px 24px;max-width:420px;margin:0 auto;backdrop-filter:blur(8px)}
+.offer-card .offer-name{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+.offer-card .offer-price{font-size:42px;font-weight:800;color:#fff;margin-bottom:6px}
+.offer-card .offer-price span{font-size:16px;font-weight:600;opacity:0.7}
+.offer-card .offer-note{font-size:13px;color:rgba(255,255,255,0.7);font-style:italic}
+.order-section{background:#fff}
+.form-wrap{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:24px}
+.total-bar{background:var(--teal-dark);color:#fff;border-radius:12px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.total-label{font-size:13px;font-weight:600;opacity:0.8}
+.total-amount{font-size:20px;font-weight:800}
+.form-group{margin-bottom:14px}
+.form-label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:5px}
+.req{color:var(--teal)}
+.form-input,.form-select,.form-textarea{width:100%;padding:10px 13px;border:1.5px solid var(--border);border-radius:9px;font-size:14px;font-family:inherit;color:var(--text);background:#fff;outline:none;transition:border-color 0.2s}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,158,117,0.1)}
+.form-textarea{min-height:80px;resize:vertical}
+.form-error{color:#E24B4A;font-size:11px;margin-top:3px;display:none}
+.btn-submit{width:100%;padding:15px;background:var(--teal);color:#fff;font-size:15px;font-weight:700;border:none;border-radius:12px;cursor:pointer;margin-top:4px;transition:background 0.2s}
+.btn-submit:hover{background:var(--teal-dark)}
+.btn-submit:disabled{background:#aaa;cursor:not-allowed}
+.form-success{text-align:center;padding:32px;display:none}
+.success-icon{font-size:48px;margin-bottom:12px}
+.success-title{font-size:18px;font-weight:700;color:var(--teal-dark);margin-bottom:6px}
+.success-desc{font-size:14px;color:var(--muted)}
+footer{background:#1A1A18;color:rgba(255,255,255,0.6);padding:28px 16px;text-align:center}
+.footer-logo{font-size:17px;font-weight:800;color:#fff;margin-bottom:6px}
+.footer-contact{font-size:13px;margin-bottom:10px}
+.footer-contact a{color:#9FE1CB;text-decoration:none}
+.footer-note{font-size:11px}
+.toast{position:fixed;bottom:20px;right:16px;left:16px;z-index:999;background:var(--teal-dark);color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,0.2);opacity:0;transform:translateY(12px);transition:all 0.3s;text-align:center}
+.toast.show{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="data:image/webp;base64,UklGRhAUAABXRUJQVlA4IAQUAADwTwCdASqQAJAAPjEUiEKiISMViyc8MAMEtgHYDuEvg9H5P8jfZosb9w/BH5O8/0ZXtY/a/dr83/9x+nfur/S/sAfqN/n/Xv/ufVz+x3qA/Zb9dfeR/4fq4/s3+X9gX+Yf3DrF/7r/y/YF/Yf0zP2v+Ev+s/7b/0f8H2lf/ddnPx687fxX6X/Ffld5zvmJ6j/4noh/JPwD+W/vX7g/1r9xvlf/Z+Kfx8/sPUI/Hv5r/mP61+3fuffLf6/wAbH/731CPbP6X/mf7V+7/+O9OX+09F/rz/s/cA/mX9E/zv9l86fxJfB/937gH8l/s3/N/xv5S/Gn/xf5j0Dfm/+F/7X+W+Av+Vf1D/ff4j97/8l4M/3G9nj9w3Xs3DvU5wr52z7Vo0G4lE0iA+rmUL4J3cCo3jk68roNGa09lioSSIg2MsMm3od8Yn5pE0xZqvx/30uFnJfmKihdZoioJjNnuZfxeEQzw/yP5GQAphA7LGbWejudiP+84mU4ylMMCjWVhEqLO2XUiIptLlvYl0VB0EKD8hFbxLblWOPMdSELBR37IXznLDhc5eodGqMLUSNDZp/Jg/pPS9Nq9MZj4DUiPAXN5smeb3m5hMUFml90sDbD3P3AC98F2LncrtWYU/QSoMipxvGwLa3f44195xLbSkpGti+Os1mAIdWqjcDwdPzyaB4JpPZk3dcBEdbN/IyFeIIUFU8wEOrT5+wu7ifCvHABNlgcQ66BBjB3LH8di9Vu53APO9u5NNKP8nKoOzUnIdzMSLI1fAzYDyvGMhi/5ln38Wmy1tRv9e7+sSO16n47bTbcPHjMppso5zRMtEHUfAJhKmNscDxKme3xP4cOC83OEfQxb95RuwAA/v95YMHd6h5s/Rw8Bbgl9QP7/D6XlvpEzTv34ytYtvAzYDeexzqqr8SohvVzhc8imHWw7D3o48Hqt46kiDXxTFzBojhXPH988tN9fV99Ntbm0rT9v4+s6x/O8oy9p1/QM8T5hv5VtAUx9+YIUHG36xwyjredJcZNIAnsToPUJ7q0S+rC+udmcthaR1UhxDoGklydLkSIey5OHYP8wlgFaobHiUtf6dWkGr3dXDIx6DccXl81iW9NNTi7yzr7k1d4u7vYvK8vYRzIz5nr99kJx1qfX+BmlQBcFxg+Ank+Su/LJo7C84q3qmvcTaF9mWWSqr3HVvaunb2PefPUnzoMTR9H8Xnl+z8whPNmF19xbtiNqMrQmSEdvTfRCOHb406IXDcYo1oMl7WWcDV+bMX7wof+vvMhZ6yCH2F9NA6w75dPCn8nH4+HeMx8VO7ZTuD018UMcLwOtjy1A0sdgFrX6Ox+83KcwXLN1WbD1ep9VQi2zh9EUEEOhCCnyGvLwUDC10cO5Y7FL+QHtPC+3VQYLYmWIgg4ifk1cNOAjmqn3Jn1uPG+4sMjden6710uaQAXY50TRa1JOcfDN4MI/X8rt/p45I7CryLplAOv6jVyzzs9F7s0Xh9J2x+Z67p0Z+QQDAeh3sAmh60Nqp0L2VYtnrOGeMGvISMTI5W5GYHann/UoZxZTmVN92WuBN+zdBeE26jg9mB8W8Lr8hC2XfZOX76HKrBSaR77C5Gi45riobrojXlMslOVUUVgpkBgz9jguEFo+JChbmOx/U34Q/DPibWpUkfOjbwvo7qIh760+FAjw4xO4TiginILOxX0XRnYu1R0zZPFvtlv2xPj8tEAuHSSAj/0x2fLNcHNk5ZmPVeTMisy+RiI3kGsb6N2USUaG97n+v28gMumUzHsBoWfvDYwV8ryyWKXz/ojibWFgbCvxDkGQlWx0B6oy75XAu9G4gGVwnRFBIRPIaUHh9ySPz1L8ntFn/GjsGJ5lRhjBXdWBRs9WxlYlQeBfeYxwO4GytxNJ9cxzLghW5Th/cqpXd1h4rBl0fMLBMjlKPtnNxLyWVDExYBv8TKaX20ai5tPMK2Tz1dXs5RTQXNrVys+U/QU63SqxN7nF7K4EEy8724wX6ONwqzoyifToeQBlK1gNW88nevbzVU6RkQwJ37vqzur7y98O9LPvqtsJsQBX+zxvjlBPZ5mPd2OMNa0CdopV9/0rzO01OYaSromjKUJ8LetDNtdIyaZ7gX8QfhDj46QXTcalDvuvGCzjbaC7JJZfix+GX3pKHtPbKtqxuj53BVpMGXTeb3cwJK52TV+poqcOMUrDRsGgTE9fDh1D/zEkQF7xIlEVnmB8ahgqTkEtWlvjO6fSikTYK0bSp5/cSybNLYZMpo2vKEHQax+pktRC3XQsDFmSBaxM+QHBSV+y1xt5AIjA+AnB9f3Xj8YHsPzACYvGHzZWGurghBfdiNbNw7ZsjTiHBDgkqIH6MQbhuvxwbYe+RMCd8veAeI2+3qBKCwffEr9Fl8bvdHQwtcPwalIQ1AmipqSIBWegZKefIY+i1+T9hISxnUhy7J4tpSLN362rTnIu6f10juZ7bIJ3mILG9+cyEEnbDohAa1W50+ZnNugFNyLvZz3TrB0yGmfHvopIZVmiL801ukt4d82knklVAHz4Nr1c7fp/UTAGkiWA+cBKBwBPmg/YfcNo3P6GIgJ1N2hVQodFt2/wgoAhGAhgRs/ODA07fsiRP9R3hKfQh3uXyw716lRW09fsESlsgMgI6CgrAGJg65Ve4a3YBHLA259kjYIJE3Z0Osszs0Etsp051BRusbsBVLZcHKNWHMKfxnRC88XO6Jnzy+40Ae+RwPYQH6U7/AOxuegKxzE6R80XNqOs4M5SpmckWQeJjGk6X7uYwBj8/38xXM0n1lrgSnME/ge5NxYHdiVhMzqPxMBE17s+r0fgY9A3IV/WRumNTpL4Ida/8RC3BUGSi6NgMvxCTY5TZG3RgN4yaywcIIBfmGkBfl6QFx7RUi1PPPMxz4lBeOv2n+JqalURtqN7RaCrNAyxvWiGn+8iPd5a4AlSXwB5O+1HNp1UlUvtaZEfb+fv7OAbrxAL41cww8SzJi54Du2i7TQE2+rLtCpx3Nw7p0QOf7uls84yzQWPamP9uNzFDVVWhvbZJFCZz33poReimYijcHeAqhb2x4Gr61qvbhh0CizDJZlHExs4NaKfdB/oqOLeAHNt29VpxMlawK1HAWj//5aJZLKXT3Y5SGE2yjDjbn4D4C2qcFLO+XaIEK0snb7xQJZ/dCNobaDA5uMvmqDGxK4ESuYYZx89t6GSLhy7HLxifsTG0ysAQDD6z56QvEpaS/Vu3w5jeXgKcEuXrCvMbbU9ejX4sU+g4cl5JPzzaC9pVhSRc+Ea1osatdf8wdsxTv5AJ529eKZZFWoH3LaJX9nDOadjLoY2oxSpY5NjmR67ILSr2if95HzOscPpehLZ0lRd8sHiY4Xvgz6q106UzQcMqZKiyDYXyX3Pv8jTQ/Q4lvhW0bP43+GLAowGDR+18w1D4oMlxfUVWfT9KPlXvGuR1jlkGKRIUklz6iGFD690qGN6K0rv+mBKaVbQ0bGNOxbkcP4yNlC26d+96hvyKakhvrkd6iS1tPAoN9mD0GxAD/MuPJmYqmkK2TqpTJEIYn5GdbWiESLUtnJOJKny2nafGNPvPcCIgRlG9Eh5B7j4WNKVL6ptgYqN/2Io/4lKKPNirQjVqMBJ5gyIAsl/olpc2cHqgKx6OSLZHQUTOBdjrD286WbMqWwCCi81kPp0Snjg/UaeJFqiSEkWiO1z1X1GnhUPEGuea+UExSiORne9Tk/LonhWjFz4ltfzlM5rzR/hqjPkbQ4LjXfp67oFCjhPErwLaenz66jc74gNbALSsrveUgZX7HA6rCl1/Jr1PZ8Kn4/QrlRoK5cUL+V90a5utvlm4Ik0f6x6DSaDeu2IjkGImna1y9z2Ma3+4crs18ku2EhwqqEENaNvzRdkB9Azy158dOXrgMviKdgrUH1wn5zvz1SZCrJfWd2bUFOsC6foRHO0/9GnkrtFqOFNohF9okFgyCnyTgsY8cI0caN4gPOsjE5rBLSdesXVOjBShtoFZK3TOF8gt+39Zhti5zRFPcp++qG4eOpFSwchgHjAa5XSCZ6S3qy0yPoIhuztaGkRKXYiGz5UGzG8YeDrJnAbt0ouU4HOLp/R+7kyAlteeCFHi8mzLNGJ4gsStHFLyZxA3xN3zGKW6DFGOsiaRT31gYA06AY81StXLLLKyT3XiZDgI3tDuNmuVLyuxtUglRT+XRdDH86gYTr+AZ5rNiRjL4ewlcHmHLTPLiiz0wtjhaIWBF4+Lrz/auH1yGQzak/r+CqFwETIMz5QN1Z3k5iBnTeBzvvq8hW3UeHdKnf3df/gb94dBKlusWh0DLBllMx2SjoETI9nOTHVjMATl3VrNmX92QEd+6LQKKL4ytVA6sw/mpPYayWAKZ9Kp2KdgORKqsKVIlKYP4x5FXEsWaen4STvTUfdwQYqHzmir9KE+T8eWmtmwVZziMuL9gFA7XvVrrgyVJCd76Z/JTvjWZ17JjRYS1m03NlGkJCpl2wEAq6CueI/z7uJkb+pa9a7DfH1YEEHg4NVhpOWmbsqwv9SJ0Baakz72kY/Gc1/JPpk6pYCdER8U6TQX+JFWQij+uSENKzoAYg93BH2Lm+vHmMDi1WhMwX2Xz4BZhAXB2guw+76wu5/FBj6eeeivAGpd4gSwbDi8q9xpFYllWoM6Fu5fWg7PCr04D2iiosxJwMZIoRhk6rzESMfN8bX9T1+J2HxC/pNTa6RxG0RjGtTMHLNIAZn4/MVfy5Roke54Q7mcTT9Eq67bRjLq1BVSytzTCo0yPvqPO7QyOMnh5V+i4u5Q1dRZHbpEZl4qU6U/NIgWOHBekrvR1nXpCUZpNbOyeCvLEC9IM9Mg9QArEPzjXbN4AVO1psYJ2QyfuznrEzeREVqXEC+K4WPAjw8T077Skvb7ajpZBlMMc6WToWhpzp6cz4pW1gAEhn82Mr+RJvcehOyGwVmp9ZnK79YAHfG+A6f8eGv6PqZ+4KTUgawpeLNCc5iI2sJtK/u3ioY7Tfav0Oz9lsMkei/z2q8isnVKlUm0DpfW0DVFeGhRx8oYEoNr4NHV9Va8EYLHqCzN6W9Rn6QIAX7qPCSDR9heMXX//sr2JWijjoynmf7uuZGJTP5b0+nE6jBvf7dbynMz8cnWORX/1naJAXan6yfRiFiAHdO8Tb3+VUmCYo/r9ZsA6aTQ9TXnll4AI7TmNJl9XYDdD36SoByWwwGgb5F+/cbHrL59PUsFJSQZ2uDi/XHz1RE3kVo/6eqJeAZcNUw3zW9lxbJ9/fdPq+/eFJ9GWEBYeHBUlrrJJaXF//pGpBZJnx/i2evqo5yE/xiUF9brS2fgHmu0JRtqhRBOMvFn4cEMRjXBdqsiwyXnHEt5fAB9iItFtvJ3n1oICsLRviVcj4FcH7RP9DJs04SHA6PYWZLrB82DTpfwoR76wUY+356HfNpj8ZpP1RdUniyBGXUbK7XBuON5DSXO2dLeTaiFrmCHr9lG6kYIl81Fxwig4P39x6+4BwZKvQkgocsbTYncotF4ZaHHlkWYN32DlddyGUbZ3yfjdBzOJWRo+7/m2RfiyPm/pFcwlFnJnIjl4auw2aMwuDzrUXMB81DrfxpMwzU6X3fxWIUVaY6vPtncWKwtlo+3JaLw740hSYRXpOOvfpdht/atnTYo6VGkkHnIp9h6GPCJFErKUlKuJKQQ9z4/eLGkfGYA+a/98UTbdobF3KYP5Nw2rvBn4YI7Yir0qd4W9T8TStvV7Wz7sekW3ja3cCfd1LrSNQLCzBs6qp7fV6rWq5mYx0Jf6baQW3tq9fZDVyaNFGumaOCCjoFIh7e9NMUqDhu1lzkjoI+NNqXDywi8Q+EKfdtGvOPedCyL6lqmze1OjHfkWjdwsR88F+KV6uxv6PAIJ/PfttrneyJtYTeD/N4+ApH4PCA8MdabyOXSW6P/b+TbJtVS2a4nU+a2PGZTY7AtSS+RE4Mndr/YSdq/V9lv4Cmq4qqgkhsOwr6Snd1zD56Fg0haVGpvTTgri6qS4W+wnxNqzUJysX9hqPS921uYB5etymlumr3MV4qB3dtV+mdR/NRBje47btEyTzN4mZh6VvHcTOiXfIeb2B3WSExWFGhn2HCo4qhwiubXli1s3FQZkF0KpJVIuWHOGosCHPfYlPJCbF03ArepEl2YO6JGvVHFza/mVUiVbvLsKr3i6RoYJ8L2Lt/wtp6Zd7GuHQTLEwXhTbyPSAwTyq6o7MGSFhQ4D8nphRa3lsPUkK4Wkeq4gxXIJP3J8tBNq5WN0s6z9lEDVw1tlOH2sv+Y4TrXh12N+uT4mF08THtwr9vXAuy1qlJfS4aj3ZMjJ++krNuVazDoznA9VdEvQf3BU43BybZQNLuN2fdQbhZQ24bQKjtnTt8wcl4gZh8HpQjEqWGxSSsdXTXQnJta3cERVaiwgqe02UL6y3+0Sbeqka60uU/GpLlsW1KTkvL9At6ckuSf4Os4FZUL/X7dcjmgzEpsRXAIYqStZSDBqdFWdtFcfvqRfpAMxtWflgl0+JAyYkd4RFGf5/C7DGUl8TalAB7HcIINssLGD34dA+XHMl56CSTGlz7IGwm6H0xrF4Gj4oPBa65BMt/8SNNxiLGqQHUx+zDp6bqr1/ExRLNE34CuzvPR2QL5PtNw2yJeSN7+xZWW/9ZucR/KVKfmj+XpopyqwVB8DmYAGTzAui0cUdNsm/SafYPkn8X6gMDunog5Wt365A2nMdUPtr0BqDAbsvlDsyDeLnOw78t+71IucJ/tAzFJRS+MS2VBWZJCKlERVfiZ00IQcI04xlM0i1iZJD9vS3Aypxo1iR6xxiO2Mk3HjpFMUn8EoK1AAAAAA=" alt="ANTIC G-CAB">
+    ANTIC G-CAB
+  </div>
+  <a href="#commander" class="nav-cta">Commander</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-badge">Mise à jour 2026</span>
+  <h1>ANTIC G-CAB <em>2026</em></h1>
+  <p class="hero-desc">Une nouvelle expérience pour votre cabinet médical</p>
+  <div class="hero-btns">
+    <a href="https://youtu.be/XwDmMGr1U80?si=3ESH-7v-9OKqB8OW" target="_blank" class="btn-outline">▶️ Vidéo démo</a>
+  </div>
+</section>
+
+<!-- LETTER SECTION -->
+<section class="letter-section" id="nouveautes">
+  <div class="sec-label" style="text-align:center">Nouveautés</div>
+  <h2 class="sec-title" style="text-align:center">Mise à jour 2026</h2>
+  <div class="letter-card">
+    <div class="letter-header">
+      <h2>ANTIC G-CAB 2026 ✅🩺</h2>
+      <div class="sub">Une nouvelle expérience pour votre cabinet médical</div>
+    </div>
+    <div class="letter-body">
+      <p><strong>Cher Docteur,</strong></p>
+      <p>Nous avons le plaisir de vous informer de la disponibilité de la nouvelle version <strong>ANTIC G-CAB 2026</strong>.</p>
+      <p>Cette version est le fruit de plusieurs mois de développement afin d'intégrer vos remarques, d'améliorer les performances du logiciel et de rendre votre travail quotidien encore plus simple et plus rapide.</p>
+      <p>Avec <strong>ANTIC G-CAB 2026</strong>, vous bénéficiez notamment de :</p>
+      <ul>
+        <li>Interface moderne et plus intuitive.</li>
+        <li>Tableau de bord entièrement repensé.</li>
+        <li>Agenda des rendez-vous amélioré.</li>
+        <li>Journal et statistiques plus détaillés.</li>
+        <li>Navigation plus rapide et plus fluide.</li>
+        <li>Optimisations des performances.</li>
+        <li>Corrections et nombreuses améliorations demandées par nos utilisateurs.</li>
+        <li>Conservation de toutes vos données patients lors de la mise à jour.</li>
+      </ul>
+    </div>
+    <div class="letter-footer">
+      <p>Passez à une version plus moderne, plus rapide et plus confortable…</p>
+      <span>Sans perdre aucune donnée de vos patients</span>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER SECTION -->
+<section class="offer-section" id="offre">
+  <div class="sec-label">Offre exclusive</div>
+  <h2 class="sec-title">Offre spéciale de mise à jour</h2>
+  <p class="sec-sub">Profitez d'un tarif préférentiel réservé aux utilisateurs de l'ancienne version.</p>
+  <div class="offer-card">
+    <div class="offer-name">ANTIC G-CAB 2026</div>
+    <div class="offer-price">7000 <span>DA seulement</span></div>
+    <div class="offer-note">(Tarif réservé aux utilisateurs de l'ancienne version.)</div>
+  </div>
+</section>
+
+<!-- COMMANDER -->
+<section class="order-section" id="commander">
+  <div class="sec-label">Commander</div>
+  <h2 class="sec-title">Passez votre commande</h2>
+  <div class="form-wrap">
+    <div id="formContent">
+
+      <!-- TOTAL FIXE -->
+      <div class="total-bar">
+        <div class="total-label">Total</div>
+        <div class="total-amount" id="totalAmount">7 000 DA</div>
+      </div>
+
+      <!-- FORM FIELDS -->
+      <div class="form-group">
+        <label class="form-label">Nom complet <span class="req">*</span></label>
+        <input type="text" id="nom" class="form-input" placeholder="Dr. Prénom Nom" autocomplete="one-time-code" autocorrect="off" autocapitalize="words" spellcheck="false" data-lpignore="true" data-form-type="other">
+        <div class="form-error" id="err-nom">Ce champ est obligatoire.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Téléphone <span class="req">*</span></label>
+        <input type="tel" id="phone" class="form-input" placeholder="06 XX XX XX XX" autocomplete="one-time-code" autocorrect="off" spellcheck="false" data-lpignore="true" data-form-type="other">
+        <div class="form-error" id="err-phone">Ce champ est obligatoire.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Wilaya <span class="req">*</span></label>
+        <select id="wilaya" class="form-select"><option value="">— Choisissez votre wilaya —</option></select>
+        <div class="form-error" id="err-wilaya">Veuillez choisir une wilaya.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Commune</label>
+        <input type="text" id="commune" class="form-input" placeholder="Votre commune">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Note / Remarque</label>
+        <textarea id="note" class="form-textarea" placeholder="Spécialité, questions..."></textarea>
+      </div>
+      <button class="btn-submit" id="submitBtn" onclick="submitForm()">✅ Confirmer ma commande</button>
+      <a id="waBtn" href="#" target="_blank" onclick="return openWA()" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;padding:15px;background:#25D366;color:#fff;font-size:15px;font-weight:700;border-radius:12px;text-decoration:none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.858L.057 23.571a.5.5 0 0 0 .615.612l5.857-1.537A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.7-.51-5.25-1.4l-.375-.222-3.886 1.02 1.036-3.786-.243-.389A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>Commander via WhatsApp</a>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">🎉</div>
+      <div class="success-title">Commande reçue !</div>
+      <p class="success-desc">Notre équipe vous contacte dans les 24h pour confirmer et planifier l'installation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ANTIC G-CAB</div>
+  <div class="footer-contact">
+    📞 <a href="tel:+213656911980">0656 91 19 80</a> — 
+    <a href="tel:+213770195873">0770 19 58 73</a> — 
+    <a href="tel:+213673119102">0673 11 91 02</a><br>
+    📧 <a href="mailto:antictech.oran@gmail.com">antictech.oran@gmail.com</a>
+  </div>
+  <div class="footer-note">Logiciel 100% Algérien — Tous droits réservés © ANTIC TECH</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== WILAYAS =====
+const wilayas = [
+  "Adrar","Chlef","Laghouat","Oum El Bouaghi","Batna","Bejaia","Biskra","Bechar","Blida","Bouira","Tamanrasset","Tebessa","Tlemcen","Tiaret","Tizi Ouzou","Alger","Djelfa","Jijel","Setif","Saida","Skikda","Sidi Bel Abbes","Annaba","Guelma","Constantine","Medea","Mostaganem","MSila","Mascara","Ouargla","Oran","El Bayadh","Illizi","Bordj Bou Arreridj","Boumerdes","El Tarf","Tindouf","Tissemsilt","El Oued","Khenchela","Souk Ahras","Tipaza","Mila","Ain Defla","Naama","Ain Temouchent","Ghardaia","Relizane","Timimoun","Bordj Badji Mokhtar","Ouled Djellal","Beni Abbes","In Salah","In Guezzam","Touggourt","Djanet","El MGhair","El Meniaa"
+];
+const wilayaSelect = document.getElementById('wilaya');
+wilayas.forEach(w => {
+  const opt = document.createElement('option');
+  opt.value = w; opt.textContent = w;
+  wilayaSelect.appendChild(opt);
+});
+
+// ===== TOTAL FIXE =====
+document.getElementById('totalAmount').textContent = '7 000 DA';
+
+// ===== FORM SUBMISSION =====
+// استبدل هذا الرابط برابط Google Apps Script الخاص بك
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw1y5Tf6Hj6W4Vw1xWv5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5y5/exec';
+
+function showError(id, show) {
+  document.getElementById(id).style.display = show ? 'block' : 'none';
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+async function submitForm() {
+  const nom = document.getElementById('nom').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const wilaya = document.getElementById('wilaya').value;
+  const commune = document.getElementById('commune').value.trim();
+  const note = document.getElementById('note').value.trim();
+  const btn = document.getElementById('submitBtn');
+
+  let valid = true;
+  if (!nom) { showError('err-nom', true); valid = false; } else showError('err-nom', false);
+  if (!phone) { showError('err-phone', true); valid = false; } else showError('err-phone', false);
+  if (!wilaya) { showError('err-wilaya', true); valid = false; } else showError('err-wilaya', false);
+
+  if (!valid) return;
+
+  btn.disabled = true;
+  btn.textContent = 'Envoi en cours...';
+
+  // استخدام FormData بدلا من JSON (يتجاوز CORS)
+  const formData = new FormData();
+  formData.append('nom', nom);
+  formData.append('phone', phone);
+  formData.append('wilaya', wilaya);
+  formData.append('commune', commune);
+  formData.append('note', note);
+  formData.append('produit', 'Mise a jour ANTIC G-CAB 2026');
+  formData.append('total', '7000 DA');
+  formData.append('source', 'Page Mise a jour G-CAB 2026');
+  formData.append('date', new Date().toISOString());
+
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      redirect: 'follow',
+      body: formData
+    });
+  } catch (e) {
+    console.log('Fetch error:', e);
+  }
+
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  showToast('Commande envoyee avec succes !');
+}
+
+function openWA() {
+  const nom = document.getElementById('nom').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const wilaya = document.getElementById('wilaya').value;
+  const commune = document.getElementById('commune').value.trim();
+  const note = document.getElementById('note').value.trim();
+
+  let valid = true;
+  if (!nom) { showError('err-nom', true); valid = false; } else showError('err-nom', false);
+  if (!phone) { showError('err-phone', true); valid = false; } else showError('err-phone', false);
+  if (!wilaya) { showError('err-wilaya', true); valid = false; } else showError('err-wilaya', false);
+
+  if (!valid) return false;
+
+  const msg = 'Bonjour, je souhaite commander la mise a jour ANTIC G-CAB 2026.
+
+Nom: ' + nom + '
+Telephone: ' + phone + '
+Wilaya: ' + wilaya + (commune ? ' - Commune: ' + commune : '') + '
+Produit: Mise a jour G-CAB 2026
+Total: 7 000 DA' + (note ? '
+Note: ' + note : '');
+
+  document.getElementById('waBtn').href = 'https://wa.me/213656911980?text=' + encodeURIComponent(msg);
+  return true;
+}
+</script>
+
+
+</body>
+</html>
